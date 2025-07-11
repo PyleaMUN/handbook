@@ -50,7 +50,7 @@
             transition: background-color 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             /* Base font size for desktop */
-            font-size: 16px; /* Added a base font size for consistency */
+            font-size: 16px; /* Consistency in base font size */
         }
         .button-link:hover {
             background-color: #008080; /* Darker teal on hover */
@@ -77,21 +77,24 @@
             height: auto;
         }
 
-        /* --- Media Query for Smaller Screens --- */
+        /* --- Media Query for Smaller Screens (Refined) --- */
         @media (max-width: 768px) {
             .button-link {
-                /* Further reduced font size and padding for better fit on mobile */
-                font-size: 13px;
-                padding: 9px 18px;
+                /* Aggressively smaller font size and padding for reliable fit on mobile */
+                font-size: 12px; /* Adjusted to 12px for better fit */
+                padding: 8px 15px; /* Slightly adjusted padding to match */
+                /* Ensure text inside button is centered even if it hypothetically wrapped
+                   (though the goal here is to prevent wrapping with smaller font) */
+                text-align: center;
             }
             h1 {
-                font-size: 24px; /* Slightly smaller heading for mobile */
+                font-size: 24px;
             }
             p {
-                font-size: 15px; /* Slightly smaller paragraph text for mobile */
+                font-size: 15px;
             }
             .logo {
-                max-width: 120px; /* Slightly smaller logo for mobile */
+                max-width: 120px;
             }
         }
     </style>
