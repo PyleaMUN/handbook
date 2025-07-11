@@ -38,8 +38,8 @@
             height: auto;
         }
         .button-link {
-            display: block;
-            width: fit-content; /* Adjust button width to content */
+            display: block; /* Ensures it takes up its own line and can have margin auto */
+            width: fit-content; /* Adjust button width to content on larger screens */
             margin: 15px auto; /* Center buttons */
             padding: 12px 25px;
             background-color: #20b2aa; /* Light teal button background */
@@ -49,8 +49,8 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* Base font size for desktop */
-            font-size: 16px; /* Consistency in base font size */
+            font-size: 16px; /* Base font size for desktop */
+            text-align: center; /* Ensure text is centered within button always */
         }
         .button-link:hover {
             background-color: #008080; /* Darker teal on hover */
@@ -77,15 +77,19 @@
             height: auto;
         }
 
-        /* --- Media Query for Smaller Screens (Refined) --- */
+        /* --- Media Query for Smaller Screens (Improved Text Positioning) --- */
         @media (max-width: 768px) {
+            .container {
+                padding: 10px; /* Slightly less internal padding on very small screens */
+            }
             .button-link {
-                /* Aggressively smaller font size and padding for reliable fit on mobile */
-                font-size: 12px; /* Adjusted to 12px for better fit */
-                padding: 8px 15px; /* Slightly adjusted padding to match */
-                /* Ensure text inside button is centered even if it hypothetically wrapped
-                   (though the goal here is to prevent wrapping with smaller font) */
-                text-align: center;
+                font-size: 13px; /* Slightly larger font than previous try, allowing wrap */
+                padding: 10px 15px; /* Adjusted padding */
+                width: auto; /* Allow button to adjust width freely */
+                max-width: calc(100% - 20px); /* Limit button width to container minus its own padding */
+                box-sizing: border-box; /* Include padding in the width calculation */
+                white-space: normal; /* Allow text to wrap onto multiple lines */
+                word-break: break-word; /* Ensure long words don't overflow */
             }
             h1 {
                 font-size: 24px;
