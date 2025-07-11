@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 20px; /* Default padding for larger screens */
             background-color: #f0f8ff; /* Light teal background */
             color: #333;
             text-align: center; /* Center align the text for mobile */
@@ -16,7 +16,7 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 15px;
+            padding: 15px; /* Default padding for larger screens */
             background-color: #fff; /* White background for content */
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -77,18 +77,21 @@
             height: auto;
         }
 
-        /* --- Media Query for Smaller Screens (Improved Text Positioning) --- */
+        /* --- Media Query for Smaller Screens (Enhanced Space & Fit) --- */
         @media (max-width: 768px) {
+            body {
+                padding: 10px; /* Reduced body padding for more available horizontal space */
+            }
             .container {
-                padding: 10px; /* Slightly less internal padding on very small screens */
+                padding: 5px; /* Reduced container padding for more internal space */
             }
             .button-link {
-                font-size: 13px; /* Slightly larger font than previous try, allowing wrap */
-                padding: 10px 15px; /* Adjusted padding */
+                font-size: 13px; /* Keep a readable font size */
+                padding: 10px 15px; /* Adjusted button padding */
                 width: auto; /* Allow button to adjust width freely */
                 max-width: calc(100% - 20px); /* Limit button width to container minus its own padding */
                 box-sizing: border-box; /* Include padding in the width calculation */
-                white-space: normal; /* Allow text to wrap onto multiple lines */
+                white-space: normal; /* Allow text to wrap onto multiple lines if needed */
                 word-break: break-word; /* Ensure long words don't overflow */
             }
             h1 {
