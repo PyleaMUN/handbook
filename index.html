@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PyleaMUN Chair Guide and Handbook</title>
     <style>
+        /* Global box-sizing for consistent layout */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -12,7 +17,7 @@
             padding: 20px;
             background-color: #005F5F; /* Dark Teal background */
             color: #333;
-            font-size: 16px; /* Slightly increased base font size */
+            font-size: 17px; /* Increased base font size */
         }
         .container {
             max-width: 900px;
@@ -30,13 +35,23 @@
             text-align: center;
             margin-bottom: 30px;
         }
+        h4 {
+            margin-top: 15px; /* Adjusted margin for h4 */
+        }
         p {
             text-align: justify; /* Justify paragraph text */
         }
         ul, ol {
             text-align: left; /* Aligned list text to the left */
             margin-left: 0px; /* Decreased bullet indentation to minimum */
+            padding-left: 10px; /* Added small left padding for lists */
         }
+        /* Specific styling for lists in contacts and chair accounts */
+        .content ul:first-child:has(li:not(:has(ul, ol))) { /* Targets direct ul inside .content that doesn't contain nested lists */
+            list-style-type: none; /* Remove bullet points */
+            padding-left: 0; /* Remove padding if list-style is none */
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -91,7 +106,7 @@
         @media (max-width: 768px) {
             body {
                 padding: 10px; /* Smaller padding on small screens */
-                font-size: 15px; /* Adjust body font size for mobile */
+                font-size: 16px; /* Adjusted body font size for mobile */
             }
             .container {
                 padding: 15px; /* Smaller padding inside container */
@@ -110,9 +125,13 @@
                 text-align: justify; /* Keep justify for mobile paragraphs too */
             }
             ul, ol {
-                font-size: 1em; /* Increased list font size for mobile */
-                text-align: left; /* Aligned list text to the left */
-                margin-left: 0px; /* Decreased bullet indentation to minimum */
+                font-size: 1.1em; /* Increased list item font size for mobile */
+                margin-left: 0px; /* Ensure minimal bullet indentation */
+                padding-left: 10px; /* Ensure small left padding for lists */
+            }
+            /* Specific styling for lists in contacts and chair accounts on mobile */
+            .content ul:first-child:has(li:not(:has(ul, ol))) {
+                padding-left: 0; /* Remove padding if list-style is none */
             }
             .collapsible {
                 font-size: 1em; /* Ensure button text is readable */
@@ -263,12 +282,12 @@
 
         <button class="collapsible">Introduction</button>
         <div class="content">
-            <p>Let's start with a definition from the official United Nations Model UN Guide: The Chair or Chairperson directs the discussions, makes sure that the rules are observed, accords the right to speak, puts forward questions, and announces decisions. The Chairperson has complete control of the proceedings at any meeting and has the responsibility of maintaining order at all times. Because the Chairperson represents the whole Committee, they cannot simultaneously represent one of the participating delegations. Chairpersons are expected to cease operating as a member of their national delegation as long as they are acting as Chairperson and do not vote. The Chairperson should speak and act impartially on behalf of the Committee as a whole and not seek to promote any national or personal views. You are not allowed to act based on your personal opinions, but you do have a big responsibility in ensuring a debate's positive outcome. Serving as chair gives you the opportunity to stimulate and co-ordinate a debate, to initiate and encourage new delegates to speak up for their countries and to act as a role model for them. Therefore, it is fundamental that you behave responsibly and professionally at all times. Also remember that the quality of your "background paper" (study guide for delegates) has a direct bearing on the quality of the quality of submitted resolutions and the debate. Aside from these characteristics, what matters most is your attitude: an approachable chair is someone who gives delegates confidence to speak and inspires them.</p>
+            <p>Let's start with a definition from the official United Nations Model UN Guide: The Chair or Chairperson directs the discussions, makes sure that the rules are observed, accords the right to speak, puts forward questions, and announces decisions. The Chairperson has complete control of the proceedings at any meeting and has the responsibility of maintaining order at all times. Because the Chairperson represents the whole Committee, they cannot simultaneously represent one of the participating delegations. Chairpersons are expected to cease operating as a member of their national delegation as long as they are acting as Chairperson and do not vote. The Chairperson should speak and act impartially on behalf of the Committee as a whole and not seek to promote any national or personal views. You are not allowed to act based on your personal opinions, but you do have a big responsibility in ensuring a debate's positive outcome. Serving as chair gives you the opportunity to stimulate and co-ordinate a debate, to initiate and encourage new delegates to speak up for their countries and to act as a role model for them. Therefore, it is fundamental that you behave responsibly and professionally at all times. Also remember that the quality of your "background paper" (study guide for delegates) has a direct bearing on the quality of submitted resolutions and the debate. Aside from these characteristics, what matters most is your attitude: an approachable chair is someone who gives delegates confidence to speak and inspires them.</p>
         </div>
 
         <button class="collapsible">Chairing Styles</button>
         <div class="content">
-            <p>Chairs are not cops, but leaders: what kind of leader do you want to be?</p>
+            <p>Chairs are not tyrants or monarchs, but leaders: what kind of leader do you want to be?</p>
 
             <h4>Autocratic</h4>
             <ul>
@@ -386,9 +405,6 @@
                 <li>"We are now in open debate on the resolution as a whole/the clause. Is there any delegation wishing to take the floor and deliver a speech either in favour or against or submit an amendment? If so, please, raise your placard high now."</li>
                 <li>"Delegation of [...], you have the floor."</li>
                 <li>"Thank you, delegate, for your speech. Is the delegate open to any point of information?"</li>
-                <li>"The delegate has opened themselves to... points of information. Are there any such points in the House? If so, please, raise your placards high now."</li>
-                <li>"These will come from the delegations of [...], [...], and [...] in that order."</li>
-                <li>"The floor is once again open. Is there any delegation wishing to take the floor and deliver a speech either in favour or against or submit an amendment? If so, please, raise your placard high now."</li>
                 <li>"We have received an amendment submitted by the delegation of [...]. Delegate, you may approach the podium, read out your amendment and deliver your speech."</li>
                 <li>"Thank you, delegate, for your speech. Is the delegate open to any point of information?"</li>
                 <li>"The delegate has opened themselves to ... points of information. Are there any such points in the House? If so, please, raise your placards high now."</li>
