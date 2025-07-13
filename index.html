@@ -3,105 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The PyleaMUN Handbook</title>
+    <title>PyleaMUN Chair Guide and Handbook</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            padding: 20px; /* Default padding for larger screens */
-            background-color: #f0f8ff; /* Light teal background */
+            padding: 20px;
+            background-color: #005F5F; /* Dark Teal background */
             color: #333;
-            text-align: center; /* Center align the text for mobile */
+            font-size: 16px; /* Slightly increased base font size */
         }
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 15px; /* Default padding for larger screens */
-            background-color: #fff; /* White background for content */
+            max-width: 900px;
+            margin: auto;
+            background: #FFFFFF; /* White container background */
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        h1, h2, h3, h4 {
+            color: #DAA520; /* Gold for headings */
+            text-align: left; /* Headings usually look better left-aligned */
+        }
         h1 {
-            color: #20b2aa; /* Light teal for headings */
             text-align: center;
-            margin-top: 20px;
             margin-bottom: 30px;
         }
         p {
-            line-height: 1.6;
-            margin-bottom: 15px;
+            text-align: justify; /* Justify paragraph text */
+        }
+        ul, ol {
+            text-align: left; /* Aligned list text to the left */
+            margin-left: 0px; /* Decreased bullet indentation to minimum */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #008080; /* Darker Teal for table headers */
+            color: #FFFFFF; /* White text for table headers */
+        }
+        .collapsible {
+            background-color: #008080; /* Darker Teal for collapsibles */
+            color: #FFFFFF; /* White text for collapsible buttons */
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            margin-bottom: 5px;
+            border-radius: 5px; /* Rounded corners for buttons */
+        }
+        .active, .collapsible:hover {
+            background-color: #004C4C; /* Even darker teal on hover/active */
+        }
+        .content {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            margin-bottom: 10px;
+            border-radius: 5px; /* Rounded corners for content area */
         }
         .logo {
             display: block;
-            margin: 0 auto 20px auto;
-            max-width: 150px;
+            margin: 0 auto 20px auto; /* Center the logo and add margin below */
+            max-width: 150px; /* Max width for the logo */
             height: auto;
-        }
-        .button-link {
-            display: block; /* Ensures it takes up its own line and can have margin auto */
-            width: fit-content; /* Adjust button width to content on larger screens */
-            margin: 15px auto; /* Center buttons */
-            padding: 12px 25px;
-            background-color: #20b2aa; /* Light teal button background */
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 16px; /* Base font size for desktop */
-            text-align: center; /* Ensure text is centered within button always */
-        }
-        .button-link:hover {
-            background-color: #008080; /* Darker teal on hover */
+            border-radius: 8px; /* Rounded corners for the logo */
         }
 
-        /* New button styles for differentiation */
-        .button-link.deep-blue {
-            background-color: #004085; /* Deep, professional blue */
-        }
-        .button-link.deep-blue:hover {
-            background-color: #002752; /* Darker blue on hover */
-        }
-        .button-link.muted-gold {
-            background-color: #C58940; /* Warm, muted gold/ochre */
-        }
-        .button-link.muted-gold:hover {
-            background-color: #A07030; /* Darker gold/ochre on hover */
-        }
-
-        .stamp {
-            display: block;
-            margin: 30px auto 10px auto;
-            max-width: 100px;
-            height: auto;
-        }
-
-        /* --- Media Query for Smaller Screens (Enhanced Space & Fit) --- */
+        /* Responsive styles for small screens */
         @media (max-width: 768px) {
             body {
-                padding: 10px; /* Reduced body padding for more available horizontal space */
+                padding: 10px; /* Smaller padding on small screens */
+                font-size: 15px; /* Adjust body font size for mobile */
             }
             .container {
-                padding: 5px; /* Reduced container padding for more internal space */
-            }
-            .button-link {
-                font-size: 13px; /* Keep a readable font size */
-                padding: 10px 15px; /* Adjusted button padding */
-                width: auto; /* Allow button to adjust width freely */
-                max-width: calc(100% - 20px); /* Limit button width to container minus its own padding */
-                box-sizing: border-box; /* Include padding in the width calculation */
-                white-space: normal; /* Allow text to wrap onto multiple lines if needed */
-                word-break: break-word; /* Ensure long words don't overflow */
+                padding: 15px; /* Smaller padding inside container */
             }
             h1 {
-                font-size: 24px;
+                font-size: 1.8em; /* Adjust heading sizes for mobile */
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
             }
             p {
-                font-size: 15px;
+                font-size: 1em; /* Increased paragraph font size for mobile */
+                text-align: justify; /* Keep justify for mobile paragraphs too */
             }
-            .logo {
-                max-width: 120px;
+            ul, ol {
+                font-size: 1em; /* Increased list font size for mobile */
+                text-align: left; /* Aligned list text to the left */
+                margin-left: 0px; /* Decreased bullet indentation to minimum */
+            }
+            .collapsible {
+                font-size: 1em; /* Ensure button text is readable */
+                padding: 15px;
+            }
+            .content {
+                padding: 0 10px; /* Adjusted content padding for better mobile view */
+            }
+            /* Make tables horizontally scrollable */
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
             }
         }
     </style>
@@ -109,47 +132,353 @@
 <body>
     <div class="container">
         <img src="logo.png" alt="PyleaMUN Logo" class="logo">
-        <h1>The PyleaMUN Handbook</h1>
-        <p>Dear Delegates and fellow Advisors,</p>
-        <p>On this page you will find information regarding your participation to the PyleaMUN Conference. You might be an experienced Delegate or even Student Officer but you might also be a not-so-experienced or even inexperienced Delegate venturing an MUN Conference for the very first time. This Guide has been made for all Delegates, experienced or not, aiming at providing everybody with an opportunity to shine brightly.</p>
-        <p>The Handbook will guide you step by step and if any of your questions are not answered here or on our site we are only one click away.</p>
-        <a href="https://m.me/Pylea.mun" class="button-link" target="_blank" rel="noopener noreferrer">Send us your message</a>
-        <p>You can also contact any of our executive members for help</p>
-        <a href="https://pyleamun.github.io/people2026/" class="button-link" target="_blank" rel="noopener noreferrer">People</a>
-        <p>You can, if you like follow us on our <strong>Social Media</strong></p>
-        <a href="https://me-page.com/p/645037/b614e98bf00b8c60304748bc2a47255a" class="button-link" target="_blank" rel="noopener noreferrer">Social Media</a>
-        <p>Advisors and English Teachers might also find helpful information regarding student preparation.</p>
-        <p>Our starting point is always our site where all the information can be found. Once you have decided to become a member of our PyleaMUN community you should familiarize yourself with it:</p>
-        <a href="https://pyleamun.github.io/pyleamun2026/" class="button-link" target="_blank" rel="noopener noreferrer">PyleaMUN</a>
-        <p>For our more inexperienced delegates we have prepared the following Introductory Video which you can watch on our YouTube channel.</p>
-        <a href="(link)" class="button-link" target="_blank" rel="noopener noreferrer">Introductory Video</a>
-        <p>You can also find the same information here:</p>
-        <a href="https://pyleamun.github.io/mun-explained/" class="button-link" target="_blank" rel="noopener noreferrer">Understanding Model United Nations</a>
-        <p>If you need further information concerning issues that might worry you may visit our</p>
-        <a href="https://pyleamun.github.io/delegate-prep-tips/" class="button-link" target="_blank" rel="noopener noreferrer">Delegate Preparation & Resources</a>
-        <p>There is also our app especially designed for mobile phones which might come in handy while preparing and during the conference:</p>
-        <a href="https://pyleamun.github.io/PyleaPocket/" class="button-link" target="_blank" rel="noopener noreferrer">PyleaPocket</a>
-        <p>When the time comes to write your <strong>Position Paper</strong> and depending on your level you might find our Position Paper Builders helpful</p>
-        <a href="https://pyleamun.github.io/position-paper-L1/" class="button-link" target="_blank" rel="noopener noreferrer">Level 1 (totally inexperienced)</a>
-        <a href="https://pyleamun.github.io/position-paper-L2/" class="button-link" target="_blank" rel="noopener noreferrer">Level 2 (for semi-experienced delegates)</a>
-        <a href="https://pyleamun.github.io/position-paper-L3/" class="button-link" target="_blank" rel="noopener noreferrer">Level 3 (for experienced delegates)</a>
-        <a href="https://pyleamun.github.io/position-paper-L4/" class="button-link" target="_blank" rel="noopener noreferrer">Level 4 (for very experienced delegates)</a>
-        <p>There is also our <strong>Country Checklist</strong> useful when you start preparing your Position Paper</p>
-        <a href="https://pyleamun.github.io/Country-Checklist-Builder/" class="button-link" target="_blank" rel="noopener noreferrer">Country Checklist Builder</a>
-        <p>Finally, we have our guide for your <strong>Draft Resolution</strong> if you need to use it.</p>
-        <a href="https://pyleamun.github.io/draft-resolution/" class="button-link" target="_blank" rel="noopener noreferrer">Draft Resolution Builder</a>
 
-        <p></p> <p>If there are any terms that you feel you need further explained you can always consult our glossary.</p>
-        <a href="https://pyleamun.github.io/GavelGloss/" class="button-link" target="_blank" rel="noopener noreferrer">GavelGloss</a>
+        <h1>PyleaMUN Chair Guide and Handbook</h1>
+        <p style="text-align: center;">Compiled by Nikolaos Pavlidis Charalampidis and Panagiotis Domvros</p>
 
-        <p>Last but not least, don’t forget our <strong>Rules of Procedure</strong> it is a long read but it really explains a lot and gets you into the spirit.</p>
-        <a href="https://pyleamun.github.io/rules-procedure/" class="button-link" target="_blank" rel="noopener noreferrer">PyleaMUN Rules of Procedure</a>
+        <h2>PyleaMUN 2026 Specifics</h2>
+        <p>The PyleaMUN 2026 Chair Handbook provides essential information for chairs participating in the conference.</p>
 
-        <a href="https://pyleamun.github.io/programme2026/" class="button-link deep-blue" target="_blank" rel="noopener noreferrer">Programme</a>
-        <a href="https://pyleamun.github.io/agenda/" class="button-link muted-gold" target="_blank" rel="noopener noreferrer">Agenda</a>
+        <button class="collapsible">Contacts</button>
+        <div class="content">
+            <ul>
+                <li>PyleaMUN Team: pyleamun@gmail.com</li>
+                <li>Secretariat: pyleamun.ga@gmail.com</li>
+                <li>Chairing Team: use dedicated WhatsApp group</li>
+                <li>Press Team: pyleamun.reg@gmail.com</li>
+                <li>Admin Staff: pa.domvros@gmail.com</li>
+            </ul>
+        </div>
 
-        <img src="blue.png" alt="PyleaMUN Stamp" class="stamp">
-        <p>The PyleaMUN Executive Organising Committee</p>
+        <button class="collapsible">Schedule & Rooms</button>
+        <div class="content">
+            <p>To check your committee schedule, visit PyleaMUN.gr/info/schedule or scan the QR code on your badge. Shifts might change, so always follow staff instructions. For committee rooms, check the updated document; rooming can change at the last minute, so follow staff instructions.</p>
+        </div>
+
+        <button class="collapsible">Chair Accounts</button>
+        <div class="content">
+            <p>Committee email and passwords are provided for access. For example:</p>
+            <ul>
+                <li>UNEP – pyleamun.unep@gmail.com</li>
+                <li>Security Council - pyleamun.sec@gmail.com</li>
+                <li>ECOSOC - pyleamun.ecosoc@gmail.com</li>
+                <li>NATO - pyleamun.nato@gmail.com</li>
+                <li>WHO - pyleamun.nato@gmail.com</li>
+                <li>Human Rights - pyleamun.hr@gmail.com</li>
+                <li>UNESCO - pyleamun.unesco@gmail.com</li>
+                <li>UN WOMEN - pyleamunw@gmail.com</li>
+                <li>Historical Crisis - pyleamun.hcc@gmail.com</li>
+                <li>GENERAL ASSEMBLY - pyleamun.ga@gmail.com</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Preparation, Role & Key Tasks</button>
+        <div class="content">
+            <p>Chairs are responsible for stimulating and coordinating debate, encouraging new delegates, and acting as role models. Professional and responsible behavior is fundamental; actions should not be based on personal opinions. Chairs must ensure a positive debate outcome and take initiative for a smooth session and delegate enjoyment. They should have a clear vision for the committee's outcome and plan accordingly, monitoring and revising as needed. If debate stalls, chairs should become more active by encouraging delegates, convening caucuses, drawing attention to new options, or making suggestions based on their knowledge.</p>
+        </div>
+
+        <button class="collapsible">Chairing Style</button>
+        <div class="content">
+            <p>A good leader has a clear vision and shares credit. The committee's outcome should be coherent, legally, and technically correct, aiming for a politically sustainable and practically implementable resolution. The goal is to stimulate rather than intimidate.</p>
+        </div>
+
+        <button class="collapsible">Rules of Procedure</button>
+        <div class="content">
+            <p>Download the Rules of Procedure and Points and Motions List from PyleaMUN.gr/info/rules-of-procedure. These rules ensure efficient formal meetings.</p>
+        </div>
+
+        <button class="collapsible">Points & Motions List</button>
+        <div class="content">
+            <p>This section details various points and motions, their debatability, seconding requirements, voting thresholds, overridability, and when they are used. Examples include:</p>
+            <ul>
+                <li>Point of Personal Privilege: No debate, no second, no vote, not overridable. Addresses personal discomfort or audibility.</li>
+                <li>Point of Information to the Chairs: No debate, no second, no vote, not overridable. Addresses explanations or clarifications not procedural.</li>
+                <li>Point of Parliamentary Enquiry: No debate, no second, no vote, not overridable. Addresses procedural explanations.</li>
+                <li>Point of Order: No debate, no second, no vote, not overridable. Addresses violations of rules.</li>
+                <li>Point of Information: No debate, no second, no vote, not overridable. Allows questions to other delegates regarding speeches, amendments, or resolutions.</li>
+                <li>Motion to extend Points of Information: No debate, yes second, no vote, yes overridable. Allows more points of information.</li>
+                <li>Motion to accept as a Friendly Amendment: No debate, yes second, no vote, no overridable. Passes a first-degree amendment without voting if no submitter objects.</li>
+                <li>Motion to move into Previous Question: No debate, yes second, no vote, yes overridable. Moves debate to voting procedures.</li>
+                <li>Motion to move into Closed Debate: No debate, yes second, no vote, yes overridable. Moves an open debate into a closed one.</li>
+                <li>Motion to move into Open Debate: No debate, yes second, no vote, yes overridable. Moves a closed debate into an open one.</li>
+                <li>Motion to move into Time Against: No debate, yes second, no vote, yes overridable. Moves Time In Favour of a Closed Debate into Time Against.</li>
+                <li>Motion to divide the House: No debate, no second, no vote, yes overridable. Starts a roll-call vote where abstaining is not possible.</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Lobbying</button>
+        <div class="content">
+            <p>Chairs receive draft resolutions in their committee inbox. They must check:</p>
+            <ul>
+                <li>Editable format (Google Docs/Word) and minimum number of preambulatory and operative clauses.</li>
+                <li>Minimum number of signatures.</li>
+                <li>No lone subclauses or sub-subclauses.</li>
+                <li>Formatting: 12 pt Times New Roman, 1.0 spacing, no double spacing, one blank line between clauses (not subclauses), capital letters at clause beginning, no repetition of introductory phrases, specific punctuation (commas for preambs/subclauses, semicolons for operative clauses, full stop at end), and proper indentation (1), 2) for clauses; a), b) for subclauses; i., ii. for sub-subclauses).</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Debate</button>
+        <div class="content">
+            <ul>
+                <li>General Procedure: All committees except Security Council debate resolutions as a whole, requiring a simple majority to pass. Observer states cannot vote but can make speeches, ask points of information, and propose amendments.</li>
+                <li>Security Council: Debates clause by clause, each requiring a simple majority. The whole resolution needs a two-thirds majority to pass. Amendments to strike out entire clauses are not in order. Permanent members (P5) must notify chairs of a "veto threat" in advance. If a veto possibility arises, chairs will call a moderated caucus among P5 members.</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Session Overview</button>
+        <div class="content">
+            <ul>
+                <li>Introduction: Roll Call, Setting of the Agenda, Policy Statements/Position Papers.</li>
+                <li>Formal Debate: Resolution reading time, Open Debate/Open Floor, Closed Debate Time in Favour, Closed Debate Time Against.</li>
+                <li>Conclusion: Voting Procedures, Dismissing/adjournment of the House.</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">General Tips</button>
+        <div class="content">
+            <ul>
+                <li>Sharing Duties: Chairing teams of three should rotate roles. The Expert Chair focuses on debate coherence, writing pick-me/do-not-pick-me lists, and deciding on amendments. The Third Chair handles administrative tasks and equipment. Rotating roles is crucial for team success.</li>
+                <li>Pick-Me/Do-Not-Pick-Me List: Used by the expert chair to track points and speeches, aid in selecting best delegate, random calls, and monitoring beginner delegates and amendments. A new list is prepared for each resolution, noting the topic and main submitter. Follow-up questions do not count.</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Possible Scenarios</button>
+        <div class="content">
+            <ul>
+                <li>Personal Pronouns: Correct delegates who use "I" or "you" by reminding them to refrain from personal pronouns.</li>
+                <li>Direct Dialogue: Interrupt immediately and state, "There will be no direct dialogue between delegates.".</li>
+                <li>Non-English Speaking: Remind delegates that English is the only working language.</li>
+                <li>Declarations of War: Not in order; make this clear to the house without dwelling on it.</li>
+                <li>Criticism of Chairs: Avoid emphatic reactions; remain calm and in control. Remind delegates to be constructive and relevant to the debate.</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Disruptive Delegates</button>
+        <div class="content">
+            <p>Start chairing strictly to establish authority. For disruptive delegates seeking attention, remain calm and in control. Chairs should react as a team to inappropriate conduct. Remove a delegate only if they are causing major disruption or most commotion. Report delegates to the executive team if necessary.</p>
+            <p>The PyleaMUN team wishes chairs the best of luck for their experience.</p>
+        </div>
+
+        <h2>General Chairing Guide</h2>
+
+        <button class="collapsible">Introduction</button>
+        <div class="content">
+            <p>Let's start with a definition from the official United Nations Model UN Guide: The Chair or Chairperson directs the discussions, makes sure that the rules are observed, accords the right to speak, puts forward questions, and announces decisions. The Chairperson has complete control of the proceedings at any meeting and has the responsibility of maintaining order at all times. Because the Chairperson represents the whole Committee, they cannot simultaneously represent one of the participating delegations. Chairpersons are expected to cease operating as a member of their national delegation as long as they are acting as Chairperson and do not vote. The Chairperson should speak and act impartially on behalf of the Committee as a whole and not seek to promote any national or personal views. You are not allowed to act based on your personal opinions, but you do have a big responsibility in ensuring a debate's positive outcome. Serving as chair gives you the opportunity to stimulate and co-ordinate a debate, to initiate and encourage new delegates to speak up for their countries and to act as a role model for them. Therefore, it is fundamental that you behave responsibly and professionally at all times. Also remember that the quality of your "background paper" (study guide for delegates) has a direct bearing on the quality of the quality of submitted resolutions and the debate. Aside from these characteristics, what matters most is your attitude: an approachable chair is someone who gives delegates confidence to speak and inspires them.</p>
+        </div>
+
+        <button class="collapsible">Chairing Styles</button>
+        <div class="content">
+            <p>Chairs are not cops, but leaders: what kind of leader do you want to be?</p>
+
+            <h4>Autocratic</h4>
+            <ul>
+                <li>Useful in some circumstances</li>
+                <li>Time-saving</li>
+                <li>Involves good leadership skills and its outcome is highly dependent on the quality of the leading style</li>
+                <li>Risks demotivating or alienating delegates</li>
+            </ul>
+
+            <h4>Democratic</h4>
+            <ul>
+                <li>Improves collective decision-making (but sometimes creates delays)</li>
+                <li>Carries on consultations with all stakeholders to help motivating them</li>
+                <li>Makes delegates feel like they have a real stake in the final outcome and encourages them to take ownership of the process</li>
+                <li>Encourages the sharing of ideas</li>
+            </ul>
+
+            <h4>Laissez-Faire</h4>
+            <ul>
+                <li>Responsibility shared by all</li>
+                <li>Useful where creativity is important</li>
+                <li>Highly motivating, as it gives people control over the project</li>
+                <li>Relies on good teamwork and interpersonal relations</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Position (Do's and Don'ts)</button>
+        <div class="content">
+            <h4>Always:</h4>
+            <ul>
+                <li>Carefully listen to the speeches of delegates to check that they stay on point, within an acceptable timeframe, and that they are not repetitive;</li>
+                <li>Show respect to delegates and remember to thank the admin staff at the end of every conference day;</li>
+                <li>Congratulate good speakers, particularly shy delegates and first-timers who clearly made an effort to take the spotlight by sending them written notes;</li>
+                <li>Explain why you are implementing a certain decision;</li>
+                <li>Feel the audience's pulse: if your committee seems bored or running out of ideas, consider allowing delegates some time for unmoderated caucus or a break, or to move directly into voting procedures;</li>
+                <li>Keep noise levels in check: call the House to order as often as needed, but stop note passing only if necessary;</li>
+                <li>Get to know your delegates and be approachable! Before starting your first committee session, introduce yourself: briefly talk about your experiences as staff, delegate, chair...</li>
+            </ul>
+
+            <h4>Never:</h4>
+            <ul>
+                <li>Favour one delegate over another: give equal opportunities to speak to everyone and adopt a consistent policy towards all delegates;</li>
+                <li>Take arbitrary procedural decisions;</li>
+                <li>Publicly contradict a co-chair: to maintain control, you must be united and stand up for each other. Contradicting your co-chair in front of the House is rude and undermining, so, if you feel your colleagues have done something wrong, you may discreetly call their attention to it and talk about it afterwards;</li>
+                <li>Shout at the House or at a delegate: always remain calm and collected; do not lose your temper, but warn them of consequences that may arise from disrespectful behaviour;</li>
+                <li>Expect there to be complete silence; only call the House out if the noise is bothering the speaker;</li>
+                <li>Suspend note passing, unless it is the source of commotion;</li>
+                <li>Ignore a point or dismiss a question or remark: even when a point is inappropriate or useless, respond to it by correcting the delegate and swiftly move on with the debate. Remember that by ignoring or dismissing comments, you are not fulfilling your role as mentor;</li>
+                <li>Abuse your authority: you will only come off as arrogant and will alienate delegates, instead of imposing a respectful attitude;</li>
+                <li>Laugh at a delegate;</li>
+                <li>Rush: speak slowly and articulate clearly;</li>
+                <li>Interrupt a delegate: you may do so only to invite them to get to their closing remarks if the speech is inappropriate, off-topic, or simply too long;</li>
+                <li>Look bored or as if you had nothing to do.</li>
+            </ul>
+        </div>
+
+        <button class="collapsible">Sample PM/DNPM List</button>
+        <div class="content">
+            <p>Topic - Main Submitter</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Speeches</th>
+                            <th>POIS</th>
+                            <th>Amendments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Austria</td><td>XXXX</td><td></td><td></td></tr>
+                        <tr><td>Bangladesh</td><td></td><td>XX</td><td></td></tr>
+                        <tr><td>Brazil</td><td>XX</td><td></td><td></td></tr>
+                        <tr><td>China</td><td></td><td></td><td>X</td></tr>
+                        <tr><td>Colombia</td><td></td><td>XXX</td><td></td></tr>
+                        <tr><td>Cuba</td><td></td><td>XX</td><td></td></tr>
+                        <tr><td>Eritrea</td><td></td><td></td><td>X</td></tr>
+                        <tr><td>Ethiopia</td><td></td><td></td><td></td></tr>
+                        <tr><td>France</td><td>XXX</td><td>XX</td><td>X</td></tr>
+                        <tr><td>Germany</td><td></td><td></td><td></td></tr>
+                        <tr><td>Greece</td><td>X</td><td>XXX</td><td></td></tr>
+                        <tr><td>Iran</td><td></td><td></td><td></td></tr>
+                        <tr><td>Iraq</td><td></td><td>XX</td><td>X</td></tr>
+                        <tr><td>Italy</td><td></td><td></td><td></td></tr>
+                        <tr><td>Jordan</td><td>X</td><td></td><td></td></tr>
+                        <tr><td>Lebanon</td><td></td><td>XX</td><td></td></tr>
+                        <tr><td>Mexico</td><td></td><td></td><td>X</td></tr>
+                        <tr><td>Palestine</td><td>XXXX</td><td></td><td></td></tr>
+                        <tr><td>Russia</td><td>XX</td><td></td><td></td></tr>
+                        <tr><td>Saudi Arabia</td><td></td><td>X</td><td></td></tr>
+                        <tr><td>Sweden</td><td></td><td>X</td><td></td></tr>
+                        <tr><td>Syria</td><td></td><td>XXX</td><td></td></tr>
+                        <tr><td>Turkey</td><td></td><td></td><td></td></tr>
+                        <tr><td>UNHCR</td><td></td><td>X</td><td></td></tr>
+                        <tr><td>UK</td><td>X</td><td>X</td><td>X</td></tr>
+                        <tr><td>USA</td><td>XX</td><td>XXX</td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <button class="collapsible">Stock Phrases</button>
+        <div class="content">
+            <h4>Resolution Reading</h4>
+            <ul>
+                <li>"The chair sets the resolution silent reading time to [...] minutes."</li>
+                <li>"We will now call the main submitter of the resolution. Delegation of [...] you may read out your Resolution and proceed with your speech."</li>
+                <li>"Thank you, delegate, for your speech. Is the delegate open to any point of information?"</li>
+                <li>"The delegate has opened themselves to ... points of information. Are there any such points in the House? If so, please, raise your placards high now."</li>
+                <li>"These will come from the delegations of [...], [...], and [...] in that order."</li>
+            </ul>
+
+            <h4>Open Debate</h4>
+            <ul>
+                <li>"We are now in open debate on the resolution as a whole/the clause. Is there any delegation wishing to take the floor and deliver a speech either in favour or against or submit an amendment? If so, please, raise your placard high now."</li>
+                <li>"Delegation of [...], you have the floor."</li>
+                <li>"Thank you, delegate, for your speech. Is the delegate open to any point of information?"</li>
+                <li>"The delegate has opened themselves to... points of information. Are there any such points in the House? If so, please, raise your placards high now."</li>
+                <li>"These will come from the delegations of [...], [...], and [...] in that order."</li>
+                <li>"The floor is once again open. Is there any delegation wishing to take the floor and deliver a speech either in favour or against or submit an amendment? If so, please, raise your placard high now."</li>
+                <li>"We have received an amendment submitted by the delegation of [...]. Delegate, you may approach the podium, read out your amendment and deliver your speech."</li>
+                <li>"Thank you, delegate, for your speech. Is the delegate open to any point of information?"</li>
+                <li>"The delegate has opened themselves to ... points of information. Are there any such points in the House? If so, please, raise your placards high now."</li>
+                <li>"These will come from the delegations of [...], [...], and [...] in that order."</li>
+                <li>"We are now in open debate on the amendment submitted by the delegation of [...]. Is there any delegation wishing to take the floor and deliver a speech either in favour or against the amendment or submit a second-degree amendment? If so, please, raise your placard high now."</li>
+            </ul>
+
+            <h4>Closed Debate Time in Favour</h4>
+            <ul>
+                <li>"We are now in closed debate time in favour on the resolution as a whole/the clause. Is there any delegation wishing to take the floor and deliver a speech in favour? If so, please, raise your placard high now."</li>
+                <li>"Delegation of [...], you have the floor."</li>
+                <li>"Thank you, delegate, for your speech. Is the delegate open to any point of information?"</li>
+                <li>"The delegate has opened themselves to ... points of information. Are there any such points in the House? If so, please, raise your placards high now."</li>
+                <li>"These will come from the delegations of [...], [...], and [...] in that order."</li>
+            </ul>
+
+            <h4>Closed Debate Time Against</h4>
+            <ul>
+                <li>"We are now in closed debate time against on the resolution as a whole/the clause. Is there any delegation wishing to take the floor and deliver a speech against or submit an amendment? If so, please, raise your placard high now."</li>
+                <li>"Delegation of [...], you have the floor."</li>
+                <li>"Thank you, delegate, for your speech. Is the delegate open to any point of information?"</li>
+                <li>"The delegate has opened themselves to ... points of information. Are there any such points in the House? If so, please, raise your placards high now."</li>
+                <li>"These will come from the delegations of [...], [...], and [...] in that order."</li>
+            </ul>
+
+            <h4>Voting Procedures</h4>
+            <ul>
+                <li>"We will now move to voting procedures. All guests are kindly invited to leave the House. Admin staff, please secure the doors and take your voting positions."</li>
+                <li>"All delegations wishing to vote in favour, please, raise your placard high now."</li>
+                <li>"You may lower them. All those against?"</li>
+                <li>"You may lower them. All those abstaining?"</li>
+                <li>"You may lower them. With [...] votes in favour, [...] against, and [...] abstentions, this resolution passes/does not pass. Clapping is/is not in order."</li>
+            </ul>
+
+            <h4>Stock Answers</h4>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Point</th>
+                            <th>Stock Answer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Point of personal privilege</td><td>"Please, delegate, rise and state your point."</td></tr>
+                        <tr><td>Point of information to the chair</td><td>"Please, delegate, rise and state your point."</td></tr>
+                        <tr><td>Point of order</td><td>"Please, delegate, rise and state your point."</td></tr>
+                        <tr><td>Point of parliamentary enquiry</td><td>"Please, delegate, rise and state your point."</td></tr>
+                        <tr><td>Right to reply</td><td></td></tr>
+                        <tr><td>Motion to extend the points of information</td><td>"(addressing the delegate on the podium) ""Is the delegate still open to points of information?"""</td></tr>
+                        <tr><td>Motion to move to voting procedures</td><td>"""That will be a motion to move to the previous question"""</td></tr>
+                        <tr><td>Motion to move to the previous question</td><td>"""Are there any objections?"""</td></tr>
+                        <tr><td>Motion to move to closed debate time in favour/against</td><td>"""Are there any objections?"""</td></tr>
+                        <tr><td>Motion to divide the House</td><td>"""We will now entertain the voting procedures once again by roll call. Please, delegates, when you hear your country's name state 'in favour' or 'against.' Abstentions are not in order at this time."""</td></tr>
+                        <tr><td>"This delegation would like to yield the floor to the delegation of ...[]. Would that be in order?"</td><td>"""Does the delegation of [...] accept the floor?"" Please note that the floor can be yielded to another delegation just once after every speech."</td></tr>
+                        <tr><td>Objection</td><td>"""Please, delegate, rise and state your objection."""</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Should you need to limit debate time, you can use the formula "due to time constraints."</p>
+        </div>
+
+        <h2>General Philosophy & Reminders</h2>
+
+        <button class="collapsible">Important Principles</button>
+        <div class="content">
+            <ul>
+                <li>MUN is about finding constructive and creative solutions to important issues.</li>
+                <li>It is not about producing real, actionable resolutions (it is not called "model" for nothing).</li>
+                <li>A good working knowledge of the UN system is necessary, but you do not need to know absolutely everything.</li>
+                <li>If two or more delegates are disruptively conflicting on any one clause's practical feasibility, it is just a clash of egos. Remind them of who is in control by deciding for the solution that seems best to you and move the debate forward without feeling the need to give too many explanations.</li>
+            </ul>
+        </div>
     </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
